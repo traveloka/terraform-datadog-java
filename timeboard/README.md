@@ -10,7 +10,7 @@ Usage
 
 ```hcl
 module "timeboard_java_beical-app" {
-  source            = "github.com/traveloka/terraform-datadog-java.git//timeboard"
+  source            = "github.com/traveloka/terraform-datadog-java//timeboard"
   product_domain    = "BEI"
   cluster           = "beical-app"
   garbage_collector = "PS" // Either PS or CMS 
