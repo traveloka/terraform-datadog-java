@@ -137,4 +137,15 @@ resource "datadog_timeboard" "java_cms" {
       type = "line"
     }
   }
+
+  graph {
+    title     = "Avg Warm Up Per Host"
+    viz       = "query_value"
+    autoscale = false
+
+    request {
+      q    = "avg:warmup.elapsedTime{success:true,appgroup:$service} by {host}/1000"
+      type = "bars"
+    }
+  } 
 }
