@@ -141,11 +141,27 @@ resource "datadog_timeboard" "java_ps" {
   graph {
     title     = "Avg Warm Up Per Host"
     viz       = "query_value"
-    autoscale = false
+    custom_unit = "S"
+    precision = 0
 
     request {
-      q    = "avg:warmup.elapsedTime{success:true,appgroup:$service} by {host}/1000"
+      q    = "avg:warmup.elapsedTime{success:true,appgroup:${var.service}} by {host}/1000"
       type = "bars"
+      conditional_format {
+        comparator = "<"
+        value       = 120
+        palette     = "white_on_green"  
+      }
+      conditional_format {
+        comparator = "<"
+        value       = 180
+        palette     = "white_on_yellow"  
+      }
+      conditional_format {
+        comparator = ">"
+        value       = 300
+        palette     = "white_on_red"  
+      }
     }
   }
 }
