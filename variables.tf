@@ -25,11 +25,6 @@ variable "environment" {
   description = "The name of the environment"
 }
 
-variable "garbage_collector" {
-  type        = "string"
-  description = "The GC algorithm which this Java uses"
-}
-
 variable "tags" {
   type        = "list"
   default     = []

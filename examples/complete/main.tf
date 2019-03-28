@@ -4,7 +4,6 @@ module "java" {
   service           = "beical"
   cluster           = "beical-app"
   environment       = "production"
-  garbage_collector = "PS"
   tags              = ["tag1", "tag2"]
 
   recipients         = ["bei@traveloka.com"]
