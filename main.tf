@@ -93,7 +93,7 @@ resource "datadog_timeboard" "java" {
   }
 
   graph {
-    title     = "Survivor / Eden Space"
+    title     = "Survivor Space"
     viz       = "timeseries"
     autoscale = true
 
@@ -104,6 +104,32 @@ resource "datadog_timeboard" "java" {
 
     request {
       q    = "avg:jmx.java.lang.usage.max{$cluster, $environment,name:par_survivor_space} by {host}"
+      type = "line"
+    }
+
+    request {
+      q    = "avg:jmx.java.lang.usage.used{$cluster, $environment,name:ps_survivor_space} by {host}"
+      type = "line"
+    }
+
+    request {
+      q    = "avg:jmx.java.lang.usage.max{$cluster, $environment,name:ps_survivor_space} by {host}"
+      type = "line"
+    }
+  }
+
+  graph {
+    title     = "Eden Space"
+    viz       = "timeseries"
+    autoscale = true
+
+    request {
+      q    = "avg:jmx.java.lang.usage.used{$cluster, $environment,name:par_eden_space} by {host}"
+      type = "line"
+    }
+
+    request {
+      q    = "avg:jmx.java.lang.usage.max{$cluster, $environment,name:par_eden_space} by {host}"
       type = "line"
     }
 
