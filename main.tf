@@ -31,7 +31,7 @@ resource "datadog_timeboard" "java" {
     autoscale = true
 
     request {
-      q    = "avg:jmx.java.lang.usage.used{$cluster, $environment,name:g1_old_gen} by {host,name}, avg:jmx.java.lang.usage.used{$cluster, $environment,name:cms_old_gen} by {host,name}, avg:jmx.java.lang.usage.used{$cluster, $environment,name:ps_old_gen} by {host,name}, avg:jmx.java.lang.usage.used{$cluster, $environment,name:tenured-loa} by {host,name}, avg:jmx.java.lang.usage.used{$cluster, $environment,name:tenured-soa} by {host,name}, avg:jmx.java.lang.usage.used{$cluster, $environment,name:balanced-old} by {host,name}, avg:jmx.java.lang.usage.used{$cluster, $environment,name:tenured_gen} by {host,name}",
+      q    = "avg:jmx.java.lang.usage.used{$cluster, $environment,name:g1_old_gen} by {host,name}, avg:jmx.java.lang.usage.used{$cluster, $environment,name:cms_old_gen} by {host,name}, avg:jmx.java.lang.usage.used{$cluster, $environment,name:ps_old_gen} by {host,name}, avg:jmx.java.lang.usage.used{$cluster, $environment,name:tenured-loa} by {host,name}, avg:jmx.java.lang.usage.used{$cluster, $environment,name:tenured-soa} by {host,name}, avg:jmx.java.lang.usage.used{$cluster, $environment,name:balanced-old} by {host,name}, avg:jmx.java.lang.usage.used{$cluster, $environment,name:tenured_gen} by {host,name}"
       type = "line"
     }
 
@@ -63,12 +63,12 @@ resource "datadog_timeboard" "java" {
     autoscale = true
 
     request {
-      q    = "avg:jmx.java.lang.usage.used{$cluster,$environment,name:g1_eden_space} by {host,name}, avg:jmx.java.lang.usage.used{$cluster,$environment,name:par_eden_space} by {host,name}, avg:jmx.java.lang.usage.used{$cluster,$environment,name:ps_eden_space} by {host,name}, avg:jmx.java.lang.usage.used{$cluster,$environment,name:nursery-allocate} by {host,name}, avg:jmx.java.lang.usage.used{$cluster,$environment,name:balanced-eden} by {host,name}, avg:jmx.java.lang.usage.used{$cluster,$environment,name:eden_space} by {host,name}",
+      q    = "avg:jmx.java.lang.usage.used{$cluster,$environment,name:g1_eden_space} by {host,name}, avg:jmx.java.lang.usage.used{$cluster,$environment,name:par_eden_space} by {host,name}, avg:jmx.java.lang.usage.used{$cluster,$environment,name:ps_eden_space} by {host,name}, avg:jmx.java.lang.usage.used{$cluster,$environment,name:nursery-allocate} by {host,name}, avg:jmx.java.lang.usage.used{$cluster,$environment,name:balanced-eden} by {host,name}, avg:jmx.java.lang.usage.used{$cluster,$environment,name:eden_space} by {host,name}"
       type = "line"
     }
 
     request {
-      q    = "avg:jmx.java.lang.usage.max{$cluster,$environment,name:g1_eden_space} by {host,name}, avg:jmx.java.lang.usage.max{$cluster,$environment,name:par_eden_space} by {host,name}, avg:jmx.java.lang.usage.max{$cluster,$environment,name:ps_eden_space} by {host,name}, avg:jmx.java.lang.usage.max{$cluster,$environment,name:nursery-allocate} by {host,name}, avg:jmx.java.lang.usage.max{$cluster,$environment,name:balanced-eden} by {host,name}, avg:jmx.java.lang.usage.max{$cluster,$environment,name:eden_space} by {host,name}",
+      q    = "avg:jmx.java.lang.usage.max{$cluster,$environment,name:g1_eden_space} by {host,name}, avg:jmx.java.lang.usage.max{$cluster,$environment,name:par_eden_space} by {host,name}, avg:jmx.java.lang.usage.max{$cluster,$environment,name:ps_eden_space} by {host,name}, avg:jmx.java.lang.usage.max{$cluster,$environment,name:nursery-allocate} by {host,name}, avg:jmx.java.lang.usage.max{$cluster,$environment,name:balanced-eden} by {host,name}, avg:jmx.java.lang.usage.max{$cluster,$environment,name:eden_space} by {host,name}"
       type = "line"
     }
 
@@ -80,12 +80,12 @@ resource "datadog_timeboard" "java" {
     autoscale = true
 
     request {
-      q    = "avg:jmx.java.lang.usage.used{$cluster,$environment,name:g1_survivor_space} by {host,name}, avg:jmx.java.lang.usage.used{$cluster,$environment,name:par_survivor_space} by {host,name}, avg:jmx.java.lang.usage.used{$cluster,$environment,name:ps_survivor_space} by {host,name}, avg:jmx.java.lang.usage.used{$cluster,$environment,name:nursery-survivor} by {host,name}, avg:jmx.java.lang.usage.used{$cluster,$environment,name:balanced-survivor} by {host,name}, avg:jmx.java.lang.usage.used{$cluster,$environment,name:survivor_space} by {host,name}",
+      q    = "avg:jmx.java.lang.usage.used{$cluster,$environment,name:g1_survivor_space} by {host,name}, avg:jmx.java.lang.usage.used{$cluster,$environment,name:par_survivor_space} by {host,name}, avg:jmx.java.lang.usage.used{$cluster,$environment,name:ps_survivor_space} by {host,name}, avg:jmx.java.lang.usage.used{$cluster,$environment,name:nursery-survivor} by {host,name}, avg:jmx.java.lang.usage.used{$cluster,$environment,name:balanced-survivor} by {host,name}, avg:jmx.java.lang.usage.used{$cluster,$environment,name:survivor_space} by {host,name}"
       type = "line"
     }
 
     request {
-      q    = "avg:jmx.java.lang.usage.max{$cluster,$environment,name:g1_survivor_space} by {host,name}, avg:jmx.java.lang.usage.max{$cluster,$environment,name:par_survivor_space} by {host,name}, avg:jmx.java.lang.usage.max{$cluster,$environment,name:ps_survivor_space} by {host,name}, avg:jmx.java.lang.usage.max{$cluster,$environment,name:nursery-survivor} by {host,name}, avg:jmx.java.lang.usage.max{$cluster,$environment,name:balanced-survivor} by {host,name}, avg:jmx.java.lang.usage.max{$cluster,$environment,name:survivor_space} by {host,name}",
+      q    = "avg:jmx.java.lang.usage.max{$cluster,$environment,name:g1_survivor_space} by {host,name}, avg:jmx.java.lang.usage.max{$cluster,$environment,name:par_survivor_space} by {host,name}, avg:jmx.java.lang.usage.max{$cluster,$environment,name:ps_survivor_space} by {host,name}, avg:jmx.java.lang.usage.max{$cluster,$environment,name:nursery-survivor} by {host,name}, avg:jmx.java.lang.usage.max{$cluster,$environment,name:balanced-survivor} by {host,name}, avg:jmx.java.lang.usage.max{$cluster,$environment,name:survivor_space} by {host,name}"
       type = "line"
     }
   }
@@ -96,7 +96,7 @@ resource "datadog_timeboard" "java" {
     autoscale = true
 
     request {
-      q    = "diff(avg:jmx.java.lang.collection_count{$cluster,$environment,name:parnew} by {host,name}), diff(avg:jmx.java.lang.collection_count{$cluster,$environment,name:g1_young_generation} by {host,name}), diff(avg:jmx.java.lang.collection_count{$cluster,$environment,name:ps_scavenge} by {host,name}), diff(avg:jmx.java.lang.collection_count{$cluster,$environment,name:scavenge} by {host,name}), diff(avg:jmx.java.lang.collection_count{$cluster,$environment,name:partial_gc} by {host,name}), diff(avg:jmx.java.lang.collection_count{$cluster,$environment,name:copy} by {host,name})",
+      q    = "diff(avg:jmx.java.lang.collection_count{$cluster,$environment,name:parnew} by {host,name}), diff(avg:jmx.java.lang.collection_count{$cluster,$environment,name:g1_young_generation} by {host,name}), diff(avg:jmx.java.lang.collection_count{$cluster,$environment,name:ps_scavenge} by {host,name}), diff(avg:jmx.java.lang.collection_count{$cluster,$environment,name:scavenge} by {host,name}), diff(avg:jmx.java.lang.collection_count{$cluster,$environment,name:partial_gc} by {host,name}), diff(avg:jmx.java.lang.collection_count{$cluster,$environment,name:copy} by {host,name})"
       type = "line"
     }
   }
@@ -107,7 +107,7 @@ resource "datadog_timeboard" "java" {
     autoscale = true
 
     request {
-      q    = "diff(avg:jvm.gc.parnew.time{$cluster,$environment,name:parnew} by {host,name}), diff(avg:jvm.gc.parnew.time{$cluster,$environment,name:g1_young_generation} by {host,name}), diff(avg:jmx.java.lang.collection_time{$cluster,$environment,name:parnew} by {host,name}), diff(avg:jmx.java.lang.collection_time{$cluster,$environment,name:g1_young_generation} by {host,name}), diff(avg:jmx.java.lang.collection_time{$cluster,$environment,name:ps_scavenge} by {host,name}), diff(avg:jvm.gc.parnew.time{$cluster,$environment,name:ps_scavenge} by {host,name}), diff(avg:jvm.gc.parnew.time{$cluster,$environment,name:scavenge} by {host,name}), diff(avg:jvm.gc.parnew.time{$cluster,$environment,name:partial_gc} by {host,name}), diff(avg:jvm.gc.parnew.time{$cluster,$environment,name:copy} by {host,name})",
+      q    = "diff(avg:jvm.gc.parnew.time{$cluster,$environment,name:parnew} by {host,name}), diff(avg:jvm.gc.parnew.time{$cluster,$environment,name:g1_young_generation} by {host,name}), diff(avg:jmx.java.lang.collection_time{$cluster,$environment,name:parnew} by {host,name}), diff(avg:jmx.java.lang.collection_time{$cluster,$environment,name:g1_young_generation} by {host,name}), diff(avg:jmx.java.lang.collection_time{$cluster,$environment,name:ps_scavenge} by {host,name}), diff(avg:jvm.gc.parnew.time{$cluster,$environment,name:ps_scavenge} by {host,name}), diff(avg:jvm.gc.parnew.time{$cluster,$environment,name:scavenge} by {host,name}), diff(avg:jvm.gc.parnew.time{$cluster,$environment,name:partial_gc} by {host,name}), diff(avg:jvm.gc.parnew.time{$cluster,$environment,name:copy} by {host,name})"
       type = "line"
     }
   }
@@ -118,7 +118,7 @@ resource "datadog_timeboard" "java" {
     autoscale = true
 
     request {
-      q    = "diff(avg:jmx.java.lang.collection_count{$cluster,$environment,name:concurrentmarksweep} by {host,name}), diff(avg:jmx.java.lang.collection_count{$cluster,$environment,name:g1_old_generation} by {host,name}), diff(avg:jmx.java.lang.collection_count{$cluster,$environment,name:ps_marksweep} by {host,name}), diff(avg:jmx.java.lang.collection_count{$cluster,$environment,name:global} by {host,name}), diff(avg:jmx.java.lang.collection_count{$cluster,$environment,name:global_garbage_collect} by {host,name}), diff(avg:jmx.java.lang.collection_count{$cluster,$environment,name:marksweepcompact} by {host,name})",
+      q    = "diff(avg:jmx.java.lang.collection_count{$cluster,$environment,name:concurrentmarksweep} by {host,name}), diff(avg:jmx.java.lang.collection_count{$cluster,$environment,name:g1_old_generation} by {host,name}), diff(avg:jmx.java.lang.collection_count{$cluster,$environment,name:ps_marksweep} by {host,name}), diff(avg:jmx.java.lang.collection_count{$cluster,$environment,name:global} by {host,name}), diff(avg:jmx.java.lang.collection_count{$cluster,$environment,name:global_garbage_collect} by {host,name}), diff(avg:jmx.java.lang.collection_count{$cluster,$environment,name:marksweepcompact} by {host,name})"
       type = "line"
     }
   }
@@ -129,7 +129,7 @@ resource "datadog_timeboard" "java" {
     autoscale = true
 
     request {
-      q    = "diff(avg:jvm.gc.parnew.time{$cluster,$environment,name:concurrentmarksweep} by {host}), diff(avg:jvm.gc.parnew.time{$cluster,$environment,name:g1_old_generation} by {host}), diff(avg:jmx.java.lang.collection_time{$cluster,$environment,name:g1_old_generation} by {host}), diff(avg:jmx.java.lang.collection_time{$cluster,$environment,name:concurrentmarksweep} by {host}), diff(avg:jmx.java.lang.collection_time{$cluster,$environment,name:ps_marksweep} by {host}), diff(avg:jvm.gc.parnew.time{$cluster,$environment,name:ps_marksweep} by {host}), diff(avg:jvm.gc.parnew.time{$cluster,$environment,name:global} by {host}), diff(avg:jvm.gc.parnew.time{$cluster,$environment,name:global_garbage_collect} by {host}), diff(avg:jvm.gc.parnew.time{$cluster,$environment,name:marksweepcompact} by {host})",
+      q    = "diff(avg:jvm.gc.parnew.time{$cluster,$environment,name:concurrentmarksweep} by {host}), diff(avg:jvm.gc.parnew.time{$cluster,$environment,name:g1_old_generation} by {host}), diff(avg:jmx.java.lang.collection_time{$cluster,$environment,name:g1_old_generation} by {host}), diff(avg:jmx.java.lang.collection_time{$cluster,$environment,name:concurrentmarksweep} by {host}), diff(avg:jmx.java.lang.collection_time{$cluster,$environment,name:ps_marksweep} by {host}), diff(avg:jvm.gc.parnew.time{$cluster,$environment,name:ps_marksweep} by {host}), diff(avg:jvm.gc.parnew.time{$cluster,$environment,name:global} by {host}), diff(avg:jvm.gc.parnew.time{$cluster,$environment,name:global_garbage_collect} by {host}), diff(avg:jvm.gc.parnew.time{$cluster,$environment,name:marksweepcompact} by {host})"
       type = "line"
     }
   }
